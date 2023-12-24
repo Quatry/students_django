@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h2>Информация о студенте</h2>
+    <div>
+        <p><strong>Имя:</strong> {{student.first_name}}</p>
+        <p><strong>Фамилия:</strong> {{student.second_name}}</p>
+    </div>
+    <div>
+        {% if student_marks %}
+        <h3>Grades</h3>
+        <ul>
+            {% for mark in student_marks %}
+            <li>{{mark.value}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <a href="/student/{{student.id}}/addmark">Добавить балл</a>
+
+    <script>
+        function addGrade() {
+            // Your code to handle adding a new grade goes here
+            alert('Add Grade button clicked');
+        }
+    </script>
+{% endblock %}

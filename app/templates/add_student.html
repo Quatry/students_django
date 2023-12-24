@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 style="text-align: center;">Добавить студента</h2>
+  <div style="text-align: center;">
+    <form method="post" style="display: inline-block; text-align: left;">
+      {% csrf_token %}
+      <div style="margin-bottom: 10px;">
+        <label for="id_first_name" style="display: block;">Имя:</label>
+        {{ form.first_name }}
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label for="id_second_name" style="display: block;">Фамилия:</label>
+        {{ form.second_name }}
+      </div>
+      <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+  </div>
+{% endblock %}

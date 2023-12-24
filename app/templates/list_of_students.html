@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Список студентов</h2>
+    <ul>
+        {% for student in students %}
+            <li>
+                <a href="../{{ student.id }}">{{ student.first_name }} {{ student.second_name }}</a> - Средний балл: {{ student.avg_mark }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
