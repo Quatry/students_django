@@ -22,3 +22,8 @@ def _add_mark(request,id):
     student = Student.objects.get(id=id)
     mark = Marks(student=student,value=value)
     mark.save()
+
+def _delete_student(request,id):
+    student = Student.objects.get(id=id)
+    student.delete()
+    return '/student/list'

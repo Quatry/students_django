@@ -17,6 +17,9 @@
         </ul>
         {% endif %}
     </div>
-    <a href="/student/{{student.id}}/addmark">Добавить балл</a>
-
+    <a href="/student/{{student.id}}/addmark" class="btn btn-success">Добавить балл</a><br><br>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" name="delete_student" value="Удалить студента" class="btn btn-secondary">
+    </form>
 {% endblock %}

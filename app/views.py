@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from app.services import _add_student, _get_students, _get_student, _add_mark
+from app.services import _add_student, _get_students, _get_student, _add_mark, _delete_student
 from app.forms import AddForm, AddMarkForm
 
 
@@ -16,6 +16,9 @@ def list_of_students(request):
     return render(request,'list_of_students.html',info)
 
 def student(request,id):
+    if request.method=='POST':
+        dir = _delete_student(request,id)
+        return redirect(dir)
     info = _get_student(request,id)
     return render(request,'student.html',info)
 
