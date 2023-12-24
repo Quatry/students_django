@@ -4,7 +4,7 @@
 
 <form method="post">
     {% csrf_token %}
-    {{form.as_p}}
+    Балл: {{form.value}}
     <input type="submit" class="btn btn-success" value="Добавить балл">
 </form>
 
