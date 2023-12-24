@@ -9,7 +9,7 @@
     </div>
     <div>
         {% if student_marks %}
-        <h3>Grades</h3>
+        <h3>Баллы</h3>
         <ul>
             {% for mark in student_marks %}
             <li>{{mark.value}}</li>
@@ -19,10 +19,4 @@
     </div>
     <a href="/student/{{student.id}}/addmark">Добавить балл</a>
 
-    <script>
-        function addGrade() {
-            // Your code to handle adding a new grade goes here
-            alert('Add Grade button clicked');
-        }
-    </script>
 {% endblock %}
